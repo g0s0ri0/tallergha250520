@@ -1,0 +1,44 @@
+name: Prueba de un workflow para la clase DS2
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+       steps:
+       - name: Validacion previa
+         run:| 
+	         hostname
+	         pwd
+	         ls -l
+	         find . 
+	         sleep 90
+
+  job02:
+    runs-on: ubuntu-latest
+       steps:
+       - name: Validacion del ambiente en linux
+         run:| 
+	         hostname
+	         pwd
+	         ls -l
+	         find . 
+
+	   - name: Checkout code
+         uses: actions/checkout@v3
+
+       - name: Validacion del checkout
+         run: find .
+
+  job03:
+    needs: job01, job02
+    runs-on: windows-latest
+    steps:          
+       - name: Validacion del ambiente en windows
+         run:| 
+	         dir
+	         tree
