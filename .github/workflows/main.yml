@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-	- name: Clonando el repositorio
+    - name: Clonando el repositorio
       uses: actions/checkout@v4
 
     - name: Set up Python 3.12
