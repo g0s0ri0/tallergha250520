@@ -1,4 +1,4 @@
-name: Prueba de un workflow para la clase DS2
+name: Prueba1
 
 on:
   push:
@@ -13,6 +13,7 @@ jobs:
     steps:
     - name: "Validacion previa"
       run: |
+        set -x
         hostname
         pwd
         ls -l
@@ -24,6 +25,7 @@ jobs:
     steps:
     - name: Validacion del ambiente en linux
       run: | 
+        set -x
         hostname
         pwd
         ls -l
